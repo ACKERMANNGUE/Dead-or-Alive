@@ -26,6 +26,7 @@ public class IA : MonoBehaviour
     }
     void Start()
     {
+        /* Init */
         rb = GetComponent<Rigidbody2D>();
         lstCols = cols.OfType<GameObject>().ToList();
         ChangeState(states.Idle);
@@ -34,13 +35,15 @@ public class IA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* Récupère le Collider2D du joueur détecté dans le diamètre detectPlayer avec le layer adéquat */
         Collider2D col = Physics2D.OverlapCircle(transform.position, detectPlayer, player);
         if (col.gameObject.layer == 10)
         {
             ChangeState(states.Moving);
+            /* Déplacement du mob */
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, col.gameObject.transform.position, step);
-
+            /* S'il est en range d'attaquer, il attaque */
             bool rangeOk = Physics2D.OverlapCircle(transform.position, rangeToAtk, player);
             if (rangeOk)
             {
@@ -55,13 +58,13 @@ public class IA : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        /* Ignore les collision avec le centre de la salle, le bord de la salle ainsi que les différent layer qui servent de détection d'étage */
         if (collision.gameObject.tag == TAG_CENTER_ROOM || collision.gameObject.tag == TAG_ROOM_DETECTION || collision.gameObject.tag == LayerCounter.TAG_LAYER)
         {
             Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.gameObject.GetComponent<Collider2D>());
         }
 
-
-        //Debug.LogWarning(col.tag);
+        /* S'il rencontre un pont, il doit sauter */
         bool rangeOk = Physics2D.OverlapCircle(transform.position, 1f, ID_BRIDGE);
         if (rangeOk)
         {

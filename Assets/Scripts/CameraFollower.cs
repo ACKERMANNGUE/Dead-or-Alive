@@ -6,17 +6,20 @@ public class CameraFollower : MonoBehaviour
 {
     private const int MIN = 0;
     private const int MAX = 100;
+    public Transform target;
+    public float speedSmooth = 10f;
+    public Vector2 offset = new Vector2(0, 5);
     GameObject mainCamera;
     void Start()
     {
         mainCamera = (GameObject)GameObject.FindWithTag("MainCamera");
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void LateUpdate()
     {
-        float x = Mathf.Clamp(transform.position.x, MIN, MAX);
-        float y = Mathf.Clamp(transform.position.y, MIN, MAX);
-        mainCamera.transform.position = new Vector2(x, y);
+        Vector2 desiredPosition = (Vector2)target.position + offset;
+        Vector2 smoothedPosition = Vector2.Lerp(transform.position, desiredPosition, speedSmooth * Time.deltaTime);
+        mainCamera.transform.position = smoothedPosition;
     }
 }

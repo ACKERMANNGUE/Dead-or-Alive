@@ -9,8 +9,9 @@ public class SpawnObject : MonoBehaviour
 
     void Start()
     {
+        /* On choisit un GameObject au hasard parmis ceux dispo dans l'éditeur */
         int rnd = Random.Range(0, objects.Length);
-       
+       /* Si c'est un ennemi on l'ajoute à la liste des ennemis à spawn plus tard*/
         if (objects[rnd].gameObject.layer == LAYER_ENEMY)
         {
             GameObject go = objects[rnd];
@@ -18,15 +19,10 @@ public class SpawnObject : MonoBehaviour
             LevelGeneration.lstEnemies.Add(go);
         }
         else {
+            /* Sinon on spawn l'object (cela peut être : un item, un morceau de mur, une potion ou un pont */
             GameObject go = (GameObject)Instantiate(objects[rnd], transform.position, Quaternion.identity);
             go.transform.parent = transform;
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

@@ -5655,6 +5655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434adf949ee709a49a7e53e79233cb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 981769677}
+  speedSmooth: 0.125
 --- !u!50 &981769679 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8729445475029724873, guid: 3b9c63d77169ecb44b901a5468a35be2,

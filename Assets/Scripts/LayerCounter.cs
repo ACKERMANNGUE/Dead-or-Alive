@@ -17,12 +17,16 @@ public class LayerCounter : MonoBehaviour
     void Update()
     {
     }
+    /// <summary>
+    /// Retourne le numéro de l'étage actuel
+    /// </summary>
+    /// <returns>Le numéro de l'étage actuel</returns>
     public int getLayer() { 
         return nbLayer;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(Convert.ToInt32(collision.name));
+        /*S'il rentre en collision avec trigger sur un layer d'étage on change la valeur de l'étage */
         if (collision.gameObject.tag == TAG_LAYER
             && Convert.ToInt32(collision.gameObject.name) >= 1
             && Convert.ToInt32(collision.gameObject.name) <= 10)

@@ -17,6 +17,7 @@ public class Rage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /* Init */
         rageEnded = false;
         canvasRage = GameObject.Find("Canvas Rage");
         canvasRage.gameObject.SetActive(false);
@@ -28,21 +29,28 @@ public class Rage : MonoBehaviour
     {
         if (start)
         {
+            /* Tant que l'effet de rage n'est pas fini on l'affiche et le décremente sur la durée */
             timeRage -= Time.deltaTime;
             SetRage(timeRage);
             if (timeRage < 0)
             {
                 rageEnded = true;
+                canvasRage.gameObject.SetActive(false);
             }
         }
     }
 
-
+    /// <summary>
+    /// Remplis la barre de duration avec le temps restant
+    /// </summary>
+    /// <param name="timeRemaining">Le temps restant</param>
     public void SetRage(float timeRemaining)
     {
         slider.value = timeRemaining;
     }
-
+    /// <summary>
+    /// On démarre le timer
+    /// </summary>
     public void StartTimer()
     {
         start = true;
