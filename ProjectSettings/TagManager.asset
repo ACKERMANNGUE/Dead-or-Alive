@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Center Room
+  - Layer
+  - Room Detection
+  - Crown
+  - End
+  - Homeostasis
+  - Heal 1
+  - Heal 2
+  - Rage 1
+  - Rage 2
+  - Knight
+  - Mage
+  - Skeletton
+  - Slime
+  - Acid Ball
+  - Magic Charge
+  - DMG
+  - Spikes
+  - Stalagtite
+  - Heal1
+  - Heal2
+  - Rage1
+  - Rage2
+  - Bridge
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Room
+  - ground
+  - Player
+  - Bridge
+  - Post Processing
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: d74d0f5bf91a2f34081ba846ad312f93
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1338030276408739396
+    second: DgDrH4LWkAA69CM_0
+  - first:
+      213: 8568829082942676394
+    second: DgDrH4LWkAA69CM_1
+  - first:
+      213: 5181225826461959678
+    second: DgDrH4LWkAA69CM_2
+  - first:
+      213: 8704762658456337665
+    second: DgDrH4LWkAA69CM_3
+  - first:
+      213: -4487859659958127486
+    second: Stalagtite 1
+  - first:
+      213: -1453741070010711619
+    second: Stalagtite 2
+  - first:
+      213: -5719477668568329246
+    second: Stalagtite 3
+  - first:
+      213: -2302127793804610932
+    second: 4
+  - first:
+      213: -5469056471143479963
+    second: Stalagtite 5
+  - first:
+      213: -1894206564372052974
+    second: Stalagtite 6
+  - first:
+      213: -6201526916867466060
+    second: DgDrH4LWkAA69CM_10
+  - first:
+      213: -3371540165222759474
+    second: DgDrH4LWkAA69CM_11
+  - first:
+      213: -9109783422286757981
+    second: DgDrH4LWkAA69CM_12
+  - first:
+      213: 2244792125128680210
+    second: DgDrH4LWkAA69CM_13
+  - first:
+      213: -5053336763626075548
+    second: DgDrH4LWkAA69CM_14
+  - first:
+      213: -692227993656414790
+    second: DgDrH4LWkAA69CM_15
+  - first:
+      213: 8838450183955679824
+    second: DgDrH4LWkAA69CM_16
+  - first:
+      213: 6343651134605280795
+    second: DgDrH4LWkAA69CM_17
+  - first:
+      213: 3436386236480634386
+    second: DgDrH4LWkAA69CM_18
+  - first:
+      213: 4970121149055223910
+    second: Bridge 1
+  - first:
+      213: -1332047350133524062
+    second: DgDrH4LWkAA69CM_20
+  - first:
+      213: -6960494432002471340
+    second: Bridge 2
+  - first:
+      213: -311901014684906163
+    second: DgDrH4LWkAA69CM_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 248
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb970f38d8c5e6de0800000000000000
+      internalID: -1338030276408739396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 259
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad95ddb6a89ae670800000000000000
+      internalID: 8568829082942676394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 248
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef54857107967e740800000000000000
+      internalID: 5181225826461959678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 259
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10dff5f94878dc870800000000000000
+      internalID: 8704762658456337665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagtite 1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 206
+        width: 37
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284f36eba6be7b1c0800000000000000
+      internalID: -4487859659958127486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagtite 2
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 232
+        width: 27
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db18d96f23643dbe0800000000000000
+      internalID: -1453741070010711619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagtite 3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 206
+        width: 37
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e394301d5550a0b0800000000000000
+      internalID: -5719477668568329246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 232
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82f8bef7f23d00e0800000000000000
+      internalID: -2302127793804610932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagtite 5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 206
+        width: 37
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56501f4ad120a14b0800000000000000
+      internalID: -5469056471143479963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagtite 6
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 232
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21404676a2d66b5e0800000000000000
+      internalID: -1894206564372052974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 180
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc571f4020cfe9a0800000000000000
+      internalID: -6201526916867466060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_11
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 180
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec38fe93512e531d0800000000000000
+      internalID: -3371540165222759474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_12
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 180
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3affadd3e3c839180800000000000000
+      internalID: -9109783422286757981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 95
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213a3ec5b8a172f10800000000000000
+      internalID: 2244792125128680210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_14
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 79
+        width: 27
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a45a9bcf0fed9b0800000000000000
+      internalID: -5053336763626075548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_15
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 79
+        width: 21
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd278eae46b466f0800000000000000
+      internalID: -692227993656414790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 79
+        width: 26
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a0aab3d9b78aa70800000000000000
+      internalID: 8838450183955679824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 79
+        width: 26
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16c629c81d290850800000000000000
+      internalID: 6343651134605280795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_18
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 79
+        width: 26
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e3878431f70bf20800000000000000
+      internalID: 3436386236480634386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge 1
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 32
+        width: 27
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668c71c2ada69f440800000000000000
+      internalID: 4970121149055223910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_20
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 43
+        width: 21
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a97a471efd938de0800000000000000
+      internalID: -1332047350133524062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge 2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 43
+        width: 21
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a886f313b576f90800000000000000
+      internalID: -6960494432002471340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DgDrH4LWkAA69CM_22
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 43
+        width: 21
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d4f9efda7ebabf0800000000000000
+      internalID: -311901014684906163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

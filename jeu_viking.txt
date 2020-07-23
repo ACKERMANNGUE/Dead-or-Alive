@@ -1,0 +1,33 @@
+But du jeu :
+trouver la sortie sans mourir et en parcourant le moins de salle possible
+
+Personnage :
+Viking qui fait 2dmg par auto-atk mais à faible portée et qui à 10hp
+
+Objets récupérables :
+	couronnes réduit le score de 2 de salles parcourues
+	potions de vie lvl 1 -> 2hp, lvl 2 -> 5hp
+	potions de dégâts lvl 1 -> 2dmg, lvl 2 -> 4dmg pendant 15 sec
+	homéostase -> les dmg sont égaux aux pv du joueur pendant 15 sec
+
+
+Enemies :
+Celui qui te fonce dessus et qui te fait 1dmg à chaque coup
+	assez squelettique, taille moyenne
+Celui qui te tires dessus lentement mais qui fait 3dmg
+	mage qui lance des spells
+celui qui tire dans les 4 directions et qui inflige 2dmg
+	un slime qui jette du slime au saut
+celui qui est le gros bourounne qui frappe au cac lentement mais qui inflige 5dmg
+	gros plein de soupe avec une grosse épée
+
+Nom du jeu : From Below
+
+
+Lore :
+jeune viking formé toute sa vie qui peut enfin partir à la bagarre mais qui comme un con tombe dans un trou.
+Son but est de quitter ce trou à rat au plus vite pour rejoindre le combat.
+
+Futur amélioration :
+Quand il trouve la porte il passe à l'étage d'après et quand il trouve l'échelle il peut remonter
+Système de boutique pour upgrade le perso
