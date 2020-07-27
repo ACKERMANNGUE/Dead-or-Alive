@@ -6,7 +6,7 @@ using System;
 
 public class Items
 {
-    private const string PATH = @"F:\Personnel\Procedural levels\Assets\datas\items.csv";
+    private const string PATH = @".\Assets\datas\items.csv";
     public Dictionary<string, string> dctItems;
 
     public Items()

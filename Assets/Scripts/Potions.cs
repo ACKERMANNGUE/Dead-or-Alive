@@ -6,7 +6,7 @@ using System;
 
 public class Potions
 {
-    private const string PATH = @"F:\Personnel\Procedural levels\Assets\datas\potions.csv";
+    private const string PATH = @".\Assets\datas\potions.csv";
     public Dictionary<string, int> dctPotions;
 
     public Potions()

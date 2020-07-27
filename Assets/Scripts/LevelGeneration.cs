@@ -18,6 +18,9 @@ public class LevelGeneration : MonoBehaviour
     const int ID_LRT = 3;
 
     const int NO_SEED = -1;
+
+    const int TAG_GROUND = 9;
+
     public GameObject ui;
     public GameObject loadingScreen;
     public Slider slider;
@@ -46,6 +49,8 @@ public class LevelGeneration : MonoBehaviour
     public GameObject End;
     public List<GameObject> lstPath;
     public static List<GameObject> lstEnemies;
+    float x;
+    float y;
 
     private bool posSet;
     // Start is called before the first frame update
@@ -92,7 +97,9 @@ public class LevelGeneration : MonoBehaviour
         oldDirection = direction;
         direction = Random.Range(RIGHT_ONE, BOTTOM + 1);
     }
-
+    void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, 0.2f);
+    }
     void Update()
     {
         /* Si le donjon a fini de se généré et que la position du joueur n'a pas été set*/
@@ -107,32 +114,39 @@ public class LevelGeneration : MonoBehaviour
             /* Pour chaque enemis on l'instantie à une position random */
             foreach (GameObject g in LevelGeneration.lstEnemies)
             {
-                float x = Random.Range(minX, maxX);
-                float y = Random.Range(minX, maxY);
-                float rad = 0.2f;
+                 x = Random.Range(minX, maxX);
+                 y = Random.Range(minX, maxY);
+                float rad = 0.02f;
+                Collider2D testastos = Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND);
+                if (testastos.gameObject.layer == TAG_GROUND) {
+                    Debug.LogError("Starfoullah");
+                }
                 /* Si l'endroit ou il doit spawn n'est pas un mur */
-                if (!Physics2D.OverlapCapsule(new Vector2(x, y), new Vector2(rad, rad), CapsuleDirection2D.Vertical, 90))
+                if (!Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
                 {
                     /* On l'instantie */
                     GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
                     go.transform.parent = g.transform;
                 }
-                else {
-                    /* Sinon, on retire des coords random tant qu'il est dans un mur */
-                    while (Physics2D.OverlapCapsule(new Vector2(x, y), new Vector2(rad, rad), CapsuleDirection2D.Vertical, 90))
-                    {
-                        x = Random.Range(minX, maxX);
-                        y = Random.Range(minX, maxY);
-                        GameObject go = (GameObject)Instantiate(g, new Vector2(x + 5, y + 5), Quaternion.identity);
-                        go.transform.parent = g.transform;
-                    }
-                }
+                //else
+                //{
+                //    /* Sinon, on retire des coords random tant qu'il est dans un mur */
+                //    while (Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
+                //    {
+                //        Debug.Log("on tourne ne rond");
+
+                //        x = Random.Range(minX, maxX);
+                //        y = Random.Range(minX, maxY);
+                //        GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
+                //        go.transform.parent = g.transform;
+                //    }
+                //}
             }
         }
         else if (!stopGeneration)
         {
             /* Augmentation de la barre de chargement pendant la génération */
-            slider.value += 0.01f;
+            slider.value += 0.001f;
             if (stopGeneration)
             {
                 slider.value += 1.9f;
