@@ -23,7 +23,7 @@ public class Enemies
             {
                 var line = reader.ReadLine();
                 var values = line.Split(';');
-                Debug.Log(string.Format("{0} - {1}", values[0], values[1]));
+                //Debug.Log(string.Format("{0} - {1}", values[0], values[1]));
                 dctEnemies.Add(values[0], Convert.ToInt32(values[1]));
             }
         }

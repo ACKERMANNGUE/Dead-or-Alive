@@ -51,6 +51,7 @@ public class LevelGeneration : MonoBehaviour
     public static List<GameObject> lstEnemies;
     float x;
     float y;
+    GameObject go;
 
     private bool posSet;
     // Start is called before the first frame update
@@ -118,29 +119,37 @@ public class LevelGeneration : MonoBehaviour
                  y = Random.Range(minX, maxY);
                 float rad = 0.02f;
                 Collider2D testastos = Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND);
-                if (testastos.gameObject.layer == TAG_GROUND) {
-                    Debug.LogError("Starfoullah");
+                if (testastos.gameObject.layer == TAG_GROUND)
+                {
+                    Debug.LogWarning("Starfoullah");
+                }
+                else if (testastos.gameObject.layer == 8) {
+                    Debug.LogWarning("Starfoullaaaaah");
                 }
                 /* Si l'endroit ou il doit spawn n'est pas un mur */
                 if (!Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
                 {
+                    Debug.Log("Normalement c'est : ");
+                    Debug.Log(g.name + " " + new Vector2(x, y));
                     /* On l'instantie */
-                    GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
+                    go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
                     go.transform.parent = g.transform;
                 }
-                //else
-                //{
-                //    /* Sinon, on retire des coords random tant qu'il est dans un mur */
-                //    while (Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
-                //    {
-                //        Debug.Log("on tourne ne rond");
+                else
+                {
+                    Debug.Log("Les relous ");
+                    Debug.Log(g.name + " " + new Vector2(x, y));
+                    /* Sinon, on retire des coords random tant qu'il est dans un mur */
+                    //while (Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
+                    //{
+                    //    Debug.Log("on tourne ne rond");
 
-                //        x = Random.Range(minX, maxX);
-                //        y = Random.Range(minX, maxY);
-                //        GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
-                //        go.transform.parent = g.transform;
-                //    }
-                //}
+                    //    x = Random.Range(minX, maxX);
+                    //    y = Random.Range(minX, maxY);
+                    //    GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
+                    //    go.transform.parent = g.transform;
+                    //}
+                }
             }
         }
         else if (!stopGeneration)

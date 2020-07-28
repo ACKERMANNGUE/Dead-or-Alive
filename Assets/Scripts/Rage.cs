@@ -20,9 +20,12 @@ public class Rage : MonoBehaviour
         /* Init */
         rageEnded = false;
         canvasRage = GameObject.Find("Canvas Rage");
-        canvasRage.gameObject.SetActive(false);
+        if (canvasRage != null)
+        {
+            canvasRage.gameObject.SetActive(false);
+        }
         slider.maxValue = timeRage;
-
+        start = false;
     }
 
     void Update()
