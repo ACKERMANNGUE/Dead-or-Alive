@@ -37,22 +37,25 @@ public class IA : MonoBehaviour
     {
         /* Récupère le Collider2D du joueur détecté dans le diamètre detectPlayer avec le layer adéquat */
         Collider2D col = Physics2D.OverlapCircle(transform.position, detectPlayer, player);
-        if (col.gameObject.layer == 10)
-        {
-            ChangeState(states.Moving);
-            /* Déplacement du mob */
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, col.gameObject.transform.position, step);
-            /* S'il est en range d'attaquer, il attaque */
-            bool rangeOk = Physics2D.OverlapCircle(transform.position, rangeToAtk, player);
-            if (rangeOk)
+        if (col != null) {
+            if (col.gameObject.layer == 10)
             {
-                ChangeState(states.Combat);
-                Debug.Log("Prend GARDE !");
+                ChangeState(states.Moving);
+                /* Déplacement du mob */
+                float step = speed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, col.gameObject.transform.position, step);
+                /* S'il est en range d'attaquer, il attaque */
+                bool rangeOk = Physics2D.OverlapCircle(transform.position, rangeToAtk, player);
+                if (rangeOk)
+                {
+                    ChangeState(states.Combat);
+                    Debug.Log("Prend GARDE !");
+                }
             }
-        }
-        else { 
-            ChangeState(states.Idle);
+            else
+            {
+                ChangeState(states.Idle);
+            }
         }
     }
 
@@ -68,7 +71,7 @@ public class IA : MonoBehaviour
         bool rangeOk = Physics2D.OverlapCircle(transform.position, 1f, ID_BRIDGE);
         if (rangeOk)
         {
-            rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         }
 
     }

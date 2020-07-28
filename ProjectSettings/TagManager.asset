@@ -28,6 +28,7 @@ TagManager:
   - Rage1
   - Rage2
   - Bridge
+  - ground
   layers:
   - Default
   - TransparentFX

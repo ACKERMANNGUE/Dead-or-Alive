@@ -19,7 +19,8 @@ public class LevelGeneration : MonoBehaviour
 
     const int NO_SEED = -1;
 
-    const int TAG_GROUND = 9;
+    const int ID_LAYER_GROUND = 9;
+    const string TAG_GROUND = "ground";
 
     public GameObject ui;
     public GameObject loadingScreen;
@@ -86,11 +87,11 @@ public class LevelGeneration : MonoBehaviour
         /* Affichage de la seed sur le loading screen */
         txtSeedLoadingScreen.text = "Chargement du monde\n" + seed;
         txtSeed.text = seed.ToString();
-        
+
         /* Instatiation de la première salle */
         int randStartPos = Random.Range(0, startingPos.Length);
         transform.position = startingPos[randStartPos].position;
-        
+
         lstPath.Add(Instantiate(rooms[Random.Range(0, rooms.Length)],
             new Vector3(transform.position.x, transform.position.y, transform.position.z - 1),
             Quaternion.identity));
@@ -98,8 +99,21 @@ public class LevelGeneration : MonoBehaviour
         oldDirection = direction;
         direction = Random.Range(RIGHT_ONE, BOTTOM + 1);
     }
-    void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(transform.position, 0.2f);
+    public bool CheckIfPositionIsEmpty(Vector2 pos)
+    {
+        bool result = false;
+        GameObject[] walls = GameObject.FindGameObjectsWithTag(TAG_GROUND);
+        Debug.Log(walls.Length);
+        foreach (GameObject g in walls)
+        {
+            if ((Vector2)g.transform.position != pos)
+            {
+
+                result = true;
+                return result;
+            }
+        }
+        return result;
     }
     void Update()
     {
@@ -113,52 +127,45 @@ public class LevelGeneration : MonoBehaviour
             Player.transform.position = lstPath[0].transform.position;
 
             /* Pour chaque enemis on l'instantie à une position random */
-            foreach (GameObject g in LevelGeneration.lstEnemies)
+            foreach (GameObject g in lstEnemies)
             {
-                 x = Random.Range(minX, maxX);
-                 y = Random.Range(minX, maxY);
-                float rad = 0.02f;
-                Collider2D testastos = Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND);
-                if (testastos.gameObject.layer == TAG_GROUND)
-                {
-                    Debug.LogWarning("Starfoullah");
-                }
-                else if (testastos.gameObject.layer == 8) {
-                    Debug.LogWarning("Starfoullaaaaah");
-                }
+                x = Random.Range((int)minX, (int)maxX);
+                y = Random.Range((int)minX, (int)maxY);
+
                 /* Si l'endroit ou il doit spawn n'est pas un mur */
-                if (!Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
+                if (!CheckIfPositionIsEmpty(new Vector2(x, y)))
                 {
-                    Debug.Log("Normalement c'est : ");
-                    Debug.Log(g.name + " " + new Vector2(x, y));
-                    /* On l'instantie */
-                    go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
-                    go.transform.parent = g.transform;
+                    /* Sinon, on retire des coords random tant qu'il est dans un mur */
+                    while (CheckIfPositionIsEmpty(new Vector2(x, y)) != true)
+                    {
+                        Debug.Log("on tourne ne rond");
+
+                        x = Random.Range((int)minX, (int)maxX);
+                        y = Random.Range((int)minX, (int)maxY);
+                        GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
+                        //go.transform.parent = g.transform;
+                    }
                 }
                 else
                 {
-                    Debug.Log("Les relous ");
-                    Debug.Log(g.name + " " + new Vector2(x, y));
-                    /* Sinon, on retire des coords random tant qu'il est dans un mur */
-                    //while (Physics2D.OverlapCircle(new Vector2(x, y), rad, TAG_GROUND))
-                    //{
-                    //    Debug.Log("on tourne ne rond");
+                    /* On l'instantie */
+                    go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
+                    //go.transform.parent = g.transform;
 
-                    //    x = Random.Range(minX, maxX);
-                    //    y = Random.Range(minX, maxY);
-                    //    GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
-                    //    go.transform.parent = g.transform;
-                    //}
                 }
+                Collider2D a = Physics2D.OverlapBox(new Vector2(g.transform.position.x, g.transform.position.y), new Vector2(0.3f, 0.3f), 0, ID_LAYER_GROUND);
+                Collider2D b = g.GetComponent<Collider2D>();
+                Debug.Log("A " + a.gameObject.name);
+                Debug.Log("B " + b);
             }
         }
         else if (!stopGeneration)
         {
             /* Augmentation de la barre de chargement pendant la génération */
-            slider.value += 0.001f;
+            slider.value += 0.01f;
             if (stopGeneration)
             {
-                slider.value += 1.9f;
+                slider.value = 1.9f;
                 loadingScreen.SetActive(true);
             }
         }
@@ -265,7 +272,7 @@ public class LevelGeneration : MonoBehaviour
                 {
                     /* Detect la salle*/
                     Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1f, room);
-                    
+
                     /*Check que la salle n'aie pas d'ouverture basse */
                     if (roomDetection.GetComponent<RoomType>().type != ID_LRB && roomDetection.GetComponent<RoomType>().type != ID_LRBT)
                     {
