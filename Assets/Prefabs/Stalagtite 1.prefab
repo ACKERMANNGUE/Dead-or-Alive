@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6354048315826904398}
   - component: {fileID: 3712404530119294546}
   - component: {fileID: 3936263877060562590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stalagtite 1
   m_TagString: Stalagtite
   m_Icon: {fileID: 0}

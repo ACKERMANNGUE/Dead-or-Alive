@@ -99,25 +99,28 @@ public class LevelGeneration : MonoBehaviour
         oldDirection = direction;
         direction = Random.Range(RIGHT_ONE, BOTTOM + 1);
     }
+    /// <summary>
+    /// Check si la position passée en paramètre est disponible
+    /// </summary>
+    /// <param name="pos">La position souhaitée</param>
+    /// <returns>True si libre, false si utilisée</returns>
     public bool CheckIfPositionIsEmpty(Vector2 pos)
     {
-        bool result = false;
+        
+        bool result = true;
         GameObject[] walls = GameObject.FindGameObjectsWithTag(TAG_GROUND);
-        Debug.Log(walls.Length);
         foreach (GameObject g in walls)
         {
-            if ((Vector2)g.transform.position != pos)
+            if (Physics2D.OverlapBox(pos, new Vector2(6.3f, 6.3f), 0, g.layer))
             {
-
-                result = true;
-                return result;
+                result = false;
             }
         }
         return result;
     }
     void Update()
     {
-        /* Si le donjon a fini de se généré et que la position du joueur n'a pas été set*/
+        /* Si le donjon a fini de se générer et que la position du joueur n'a pas été set*/
         if (stopGeneration && !posSet)
         {
             posSet = true;
@@ -127,36 +130,30 @@ public class LevelGeneration : MonoBehaviour
             Player.transform.position = lstPath[0].transform.position;
 
             /* Pour chaque enemis on l'instantie à une position random */
-            foreach (GameObject g in lstEnemies)
+            foreach (GameObject mob in lstEnemies)
             {
-                x = Random.Range((int)minX, (int)maxX);
-                y = Random.Range((int)minX, (int)maxY);
+                x = (float)System.Math.Round(Random.Range(minX, maxX), System.MidpointRounding.AwayFromZero);
+                y = (float)System.Math.Round(Random.Range(minX, maxY), System.MidpointRounding.AwayFromZero);
 
                 /* Si l'endroit ou il doit spawn n'est pas un mur */
-                if (!CheckIfPositionIsEmpty(new Vector2(x, y)))
+                if (CheckIfPositionIsEmpty(new Vector2(x, y)))
                 {
-                    /* Sinon, on retire des coords random tant qu'il est dans un mur */
-                    while (CheckIfPositionIsEmpty(new Vector2(x, y)) != true)
-                    {
-                        Debug.Log("on tourne ne rond");
 
-                        x = Random.Range((int)minX, (int)maxX);
-                        y = Random.Range((int)minX, (int)maxY);
-                        GameObject go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
-                        //go.transform.parent = g.transform;
-                    }
+                    /* On l'instantie */
+                    go = (GameObject)Instantiate(mob, new Vector2(x, y), Quaternion.identity);
                 }
                 else
                 {
-                    /* On l'instantie */
-                    go = (GameObject)Instantiate(g, new Vector2(x, y), Quaternion.identity);
-                    //go.transform.parent = g.transform;
+                    /* Sinon, on retire des coords random tant qu'il est dans un mur */
+                    while (CheckIfPositionIsEmpty(new Vector2(x, y)) == false)
+                    {
+                        Debug.Log("on tourne en rond");
 
+                        x = (float)System.Math.Round(Random.Range(minX, maxX), System.MidpointRounding.AwayFromZero);
+                        y = (float)System.Math.Round(Random.Range(minX, maxY), System.MidpointRounding.AwayFromZero);
+                        go = (GameObject)Instantiate(mob, new Vector2(x, y), Quaternion.identity);
+                    }
                 }
-                Collider2D a = Physics2D.OverlapBox(new Vector2(g.transform.position.x, g.transform.position.y), new Vector2(0.3f, 0.3f), 0, ID_LAYER_GROUND);
-                Collider2D b = g.GetComponent<Collider2D>();
-                Debug.Log("A " + a.gameObject.name);
-                Debug.Log("B " + b);
             }
         }
         else if (!stopGeneration)

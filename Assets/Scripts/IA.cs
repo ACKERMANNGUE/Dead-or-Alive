@@ -71,7 +71,7 @@ public class IA : MonoBehaviour
         bool rangeOk = Physics2D.OverlapCircle(transform.position, 1f, ID_BRIDGE);
         if (rangeOk)
         {
-            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 2), ForceMode2D.Impulse);
         }
 
     }
